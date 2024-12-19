@@ -1,10 +1,19 @@
 import TodoCard from "./TodoCard";
 
-export default function TodoList() {
-    return (
-      <>
-        <TodoCard/>
-      </>
-    );
-  }
-  
+export default function TodoList(props) {
+  const { todos } = props;
+  const tab = "All";
+  return <>{
+
+todos.map((todo,todoIndex) => { 
+  return(
+<TodoCard key={todoIndex} todoIndex={todoIndex} {...props}/>
+
+
+
+
+  )
+ })
+
+  }</>;
+}
